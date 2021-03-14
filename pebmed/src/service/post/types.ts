@@ -10,3 +10,7 @@ export interface Subscribe {
 	installments: number;
 	couponCode: string;
 }
+
+export interface SubscribeDTO extends Subscribe {
+	id: number;
+}
