@@ -1,4 +1,5 @@
 export const Color = {
+	app: 'rgba(73, 120, 155,1)',
 	greyRegular: 'rgba(197, 197, 197, 1)',
 	alertDarken: 'rgba(235, 185, 19, 1)',
 	alertRegular: 'rgba(240, 203, 78, 1)',
