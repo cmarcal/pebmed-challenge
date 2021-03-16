@@ -5,7 +5,6 @@ import { Loading } from 'src/components/loading';
 import { Container, Title, Header, Body } from './styles';
 export function ListTemplate() {
 	const { plans, isLoading, error, fetchPlans } = useGetPlans();
-
 	useEffect(() => {
 		fetchPlans();
 	}, []);

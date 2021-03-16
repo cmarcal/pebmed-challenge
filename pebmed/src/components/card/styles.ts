@@ -6,16 +6,28 @@ export const Container = styled.div`
 	border-radius: 8px;
 	box-shadow: 0px 0px 5px 2px rgb(0 0 0 / 10%);
 	margin-bottom: 24px;
-	min-width: 300px;
 	background-color: ${Color.light};
-`;
-export const Column = styled.div`
-	width: 50%;
-	display: flex;
+
 	flex-direction: column;
+	@media (min-width: 1024px) {
+		min-width: 300px;
+		min-height: 400px;
+		justify-content: space-around;
+	} ;
 `;
+
 export const Title = styled.h2`
 	margin: 8px 0 16px 0;
+	position: relative;
+	&:after {
+		content: '';
+		border-bottom: 2px solid ${Color.errorDarken};
+		width: 25%;
+		position: absolute;
+		bottom: -4px;
+		left: 0;
+		height: 3px;
+	}
 `;
 export const Price = styled.div`
 	display: flex;
@@ -23,6 +35,8 @@ export const Price = styled.div`
 	gap: 8px;
 	margin-bottom: 8px;
 	font-weight: 600;
+	font-size: 1.2rem;
+	color: ${Color.dark};
 `;
 export const PriceAnnually = styled.p`
 	margin: 0;
@@ -38,7 +52,6 @@ export const ItemBenefits = styled.li`
 	margin-bottom: 6px;
 `;
 
-export const ImageWrapper = styled.div<{ rotate?: boolean }>`
+export const ImageWrapper = styled.div`
 	margin: auto;
-	${({ rotate }) => rotate && 'transform: rotate(270deg);'}
 `;
