@@ -1,6 +1,8 @@
 import React, { ReactElement } from 'react';
 import { Button } from 'src/components/button';
 import { Container, Title, Price, PriceAnnually, Benefits, ItemBenefits } from './styles';
+import { navigate, Routes } from 'src/routes';
+
 interface ComponentsProps {
 	caption: string;
 	description: string;
@@ -29,7 +31,7 @@ export function Card(props: ComponentsProps): ReactElement {
 				<ItemBenefits>{description}</ItemBenefits>
 				<ItemBenefits>Acesso ilimitado</ItemBenefits>
 			</Benefits>
-			<Button text='Eu quero esse' onClick={() => console.log(id)} highlight={highligth} />
+			<Button text='Eu quero esse' onClick={() => navigate(Routes.payment(id))} highlight={highligth} />
 		</Container>
 	);
 }
