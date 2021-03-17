@@ -1,4 +1,4 @@
-import { ListTemplate } from '../template/list/';
-export default function Home() {
+import { ListTemplate } from 'src/template/list/';
+export default function List() {
 	return <ListTemplate />;
 }
