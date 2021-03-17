@@ -6,7 +6,7 @@ interface ReturnHooks {
 	subscription: SubscribeDTO;
 	isLoading: boolean;
 	error: string;
-	createSubscribeAPI: (subscribe: Subscribe) => void;
+	createSubscribe: (subscribe: Subscribe) => void;
 }
 
 export function useCreateSubscription(): ReturnHooks {
