@@ -1,5 +1,6 @@
 export const Color = {
 	app: 'rgba(73, 120, 155,1)',
+	paymentBox: 'rgba(44, 52, 69, 1)',
 	greyRegular: 'rgba(197, 197, 197, 1)',
 	alertDarken: 'rgba(235, 185, 19, 1)',
 	alertRegular: 'rgba(240, 203, 78, 1)',
@@ -9,10 +10,6 @@ export const Color = {
 	errorRegular: 'rgba(221, 128, 127, 1)',
 	errorLight: 'rgba(233, 170, 169, 1)',
 	errorClean: 'rgba(244, 213, 212, 1)',
-	infoDarken: 'rgba(16, 123, 192, 1)',
-	infoRegular: 'rgba(76, 156, 208, 1)',
-	infoLight: 'rgba(135, 189, 224, 1)',
-	infoClean: 'rgba(195, 222, 239, 1)',
 	successDarken: 'rgba(6, 171, 113, 1)',
 	successRegular: 'rgba(68, 192, 149, 1)',
 	successLight: 'rgba(130, 213, 184, 1)',
