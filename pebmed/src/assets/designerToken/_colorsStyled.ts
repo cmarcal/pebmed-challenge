@@ -1,5 +1,6 @@
 export const Color = {
 	app: 'rgba(73, 120, 155,1)',
+	appClean: ' rgba(111, 131, 146, 1);',
 	paymentBox: 'rgba(44, 52, 69, 1)',
 	greyRegular: 'rgba(197, 197, 197, 1)',
 	alertDarken: 'rgba(235, 185, 19, 1)',

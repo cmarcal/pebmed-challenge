@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { CreditCardWrapper } from 'src/components/CreditCardWrapper';
 import { CreditCard } from 'src/components/CreditCardWrapper/types';
 import { InputField } from 'src/components/input';
-import { Form, Row } from './styles';
+import { PaymentButton } from 'src/components/button';
+import { ButtonWrapper, Form, Row } from './styles';
 
 interface ComponentsProps {
 	handlClick(val: any): void;
@@ -21,6 +22,8 @@ export function CreditCardForms(props: ComponentsProps) {
 	const handleFocus = (event) => {
 		setFocus(event.target.name);
 	};
+	const disabledPayment = !!(!cardValues?.number || !cardValues?.cvv || !cardValues?.expiry || !cardValues?.name);
+	console.log(disabledPayment);
 	return (
 		<>
 			<CreditCardWrapper infoCard={cardValues} focused={focus} />
@@ -68,6 +71,9 @@ export function CreditCardForms(props: ComponentsProps) {
 					handleChange={({ target }) => setCupom(target.value)}
 				/>
 			</Form>
+			<ButtonWrapper>
+				<PaymentButton disabled={disabledPayment} text='Finalizar compra' onClick={() => console.log('teste')} />
+			</ButtonWrapper>
 		</>
 	);
 }

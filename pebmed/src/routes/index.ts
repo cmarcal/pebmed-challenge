@@ -2,7 +2,6 @@ import Router from 'next/router';
 import queryString from 'query-string';
 
 export const finalPathBuilder = ({ href, qs }) => {
-	console.log(qs);
 	if (qs) {
 		return {
 			href: `${href}?${qs}`,

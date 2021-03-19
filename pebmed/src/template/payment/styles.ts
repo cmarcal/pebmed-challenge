@@ -22,6 +22,7 @@ export const InfoPayment = styled.div`
 	box-shadow: 0px 0px 5px 2px rgb(0 0 0 / 10%);
 	color: ${Color.light};
 	padding: 40px;
+	position: relative;
 `;
 export const TitlePage = styled.h1`
 	margin: 0;
