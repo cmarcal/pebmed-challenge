@@ -23,7 +23,6 @@ export function CreditCardForms(props: ComponentsProps) {
 		setFocus(event.target.name);
 	};
 	const disabledPayment = !!(!cardValues?.number || !cardValues?.cvv || !cardValues?.expiry || !cardValues?.name);
-	console.log(disabledPayment);
 	return (
 		<>
 			<CreditCardWrapper infoCard={cardValues} focused={focus} />
