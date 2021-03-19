@@ -6,7 +6,6 @@ export const Container = styled.div`
 `;
 export const Header = styled.div`
 	padding: 16px;
-	background-color: ${Color.app};
 	color: ${Color.light};
 
 	min-height: 35%;

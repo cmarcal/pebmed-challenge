@@ -4,8 +4,8 @@ import styled from 'styled-components';
 export const ButtonWrapper = styled.div<{ disabled: boolean }>`
 	display: flex;
 	& > button {
-		background-color: ${({ disabled }) => (disabled ? Color.greyDarkest : Color.app)};
-		border-color: ${({ disabled }) => (disabled ? Color.greyDarkest : Color.app)};
+		background-color: ${({ disabled }) => (disabled ? Color.greyDarkest : Color.appLight)};
+		border-color: ${({ disabled }) => (disabled ? Color.greyDarkest : Color.appLight)};
 		color: ${Color.light};
 		height: 48px;
 		flex: 1;

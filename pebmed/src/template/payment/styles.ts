@@ -17,7 +17,7 @@ export const ProductDetail = styled.div`
 `;
 export const InfoPayment = styled.div`
 	flex: 1;
-	background-color: ${Color.paymentBox};
+	background-color: ${Color.app};
 	border-radius: 8px;
 	box-shadow: 0px 0px 5px 2px rgb(0 0 0 / 10%);
 	color: ${Color.light};
