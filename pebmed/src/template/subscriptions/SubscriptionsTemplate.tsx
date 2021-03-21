@@ -20,7 +20,7 @@ export function SubscriptionsTemplate() {
 						<Card
 							key={plan.id}
 							id={plan.id}
-							highligth={plan.period === 'annually' || false}
+							isAnnually={plan.period === 'annually' || false}
 							title={plan.title}
 							fullPrice={plan.fullPrice}
 							installments={plan.installments}
@@ -29,6 +29,7 @@ export function SubscriptionsTemplate() {
 							description={plan.description}
 							splittable={plan.splittable}
 							gateway={plan.gateway}
+							discountPercentage={plan.discountPercentage}
 						/>
 					))
 				) : (
