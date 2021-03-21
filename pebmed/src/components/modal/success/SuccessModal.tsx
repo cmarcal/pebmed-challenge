@@ -13,7 +13,7 @@ interface ComponentPros {
 export function SuccessModal(props: ComponentPros) {
 	const { plan, pricePlan, installment, email, cpf } = props;
 	const price = () => {
-		if (installment === 1) return `À vista, R$ ${pricePlan},00`;
+		if (installment === 1) return ` R$ ${pricePlan},00`;
 		else {
 			const valuePlan = parseFloat((pricePlan / installment).toString())
 				.toFixed(2)
