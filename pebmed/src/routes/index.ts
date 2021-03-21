@@ -1,7 +1,7 @@
 import Router from 'next/router';
 import queryString from 'query-string';
 
-export const finalPathBuilder = ({ href, qs }) => {
+export const finalPathBuilder = ({ href, qs = null }) => {
 	if (qs) {
 		return {
 			href: `${href}?${qs}`,
@@ -24,8 +24,12 @@ export const navigate = (to: { href: string; as: string }, options?: { shallow: 
 };
 
 export const Routes = {
-	payment: (planId = null) => {
+	payment: () => {
 		const href = '/payment/';
-		return finalPathBuilder({ href, qs: objectToQueryString({ pid: planId }) });
+		return finalPathBuilder({ href });
+	},
+	subscriptions: () => {
+		const href = '/subscriptions/';
+		return finalPathBuilder({ href });
 	}
 };
