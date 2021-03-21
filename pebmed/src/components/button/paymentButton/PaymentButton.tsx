@@ -11,7 +11,7 @@ export function PaymentButton(props: ComponentsProps) {
 
 	return (
 		<ButtonWrapper disabled={disabled}>
-			<Button text='Finalizar compra' onClick={onClick} />
+			<Button text='Ativar assinatura' onClick={onClick} />
 		</ButtonWrapper>
 	);
 }

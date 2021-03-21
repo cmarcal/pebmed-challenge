@@ -52,11 +52,11 @@ export function PaymentTemplate() {
 		<>
 			{createdSubscription && subscription && (
 				<SuccessModal
-					email={person?.email || 'teste@teste.com'}
+					email={person?.email}
 					pricePlan={subscription.price}
 					plan={subscription.name}
-					cpf={createdSubscription?.creditCardCPF || '111.111.111-11'}
-					installment={createdSubscription?.installments || 2}
+					cpf={createdSubscription?.creditCardCPF}
+					installment={createdSubscription?.installments}
 				/>
 			)}
 			<Container>

@@ -86,7 +86,7 @@ export function CreditCardForms(props: ComponentsProps) {
 				<InputField
 					label='Nome impresso no cartão'
 					nameInput='name'
-					value={cardValues?.name || ''}
+					value={cardValues?.name?.toUpperCase() || ''}
 					placeholder='Seu nome'
 					handleChange={({ target }) => handleChangeCard(target.name, target.value)}
 					handleFocus={handleFocus}
@@ -99,13 +99,15 @@ export function CreditCardForms(props: ComponentsProps) {
 					placeholder='Insira aqui'
 					handleChange={({ target }) => setCupom(target.value)}
 				/>
-				<SelectField
-					label='Número de parcelas'
-					name='installments'
-					options={optionsInstallment()}
-					value={installments}
-					handleChange={({ target }) => setInstallments(target.value)}
-				/>
+				{installmentsLimit < 1 && (
+					<SelectField
+						label='Número de parcelas'
+						name='installments'
+						options={optionsInstallment()}
+						value={installments}
+						handleChange={({ target }) => setInstallments(target.value)}
+					/>
+				)}
 			</Form>
 			<ButtonWrapper>
 				<PaymentButton
