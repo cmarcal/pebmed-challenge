@@ -1,14 +1,10 @@
 {
-	"env": {
-			"browser": true,
-			"es2021": true
-	},
+	"parser": "@typescript-eslint/parser",
 	"extends": [
 			"eslint:recommended",
 			"plugin:react/recommended",
 			"plugin:@typescript-eslint/recommended"
 	],
-	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 			"ecmaFeatures": {
 					"jsx": true
@@ -24,6 +20,16 @@
 		"no-console": "off",
 		"no-unused-vars": "warn",
 		"quotes": ["error", "single"],
+		"prettier/prettier": "off",
+		"no-use-before-define": "off",
+		"react/display-name": ["off", { "ignoreTranspilerName": true }],
+		"@typescript-eslint/triple-slash-reference": "off",
+		"@typescript-eslint/no-use-before-define": "off",
+		"@typescript-eslint/class-name-casing": "off",
+		"@typescript-eslint/camelcase": "off",
+		"@typescript-eslint/no-var-requires": "off",
+		"@typescript-eslint/no-empty-interface": "off",
+		"@typescript-eslint/explicit-function-return-type": "off"
 	},
 	"settings": {
 		"react": {

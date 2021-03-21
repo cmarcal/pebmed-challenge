@@ -1,7 +1,7 @@
 import React, { ReactElement, useContext } from 'react';
 import { SubscriptionContext } from 'src/store/subscription';
 import { Button } from 'src/components/button';
-import { Container, Title, Price, PriceAnnually, InitialPrice, Benefits, ItemBenefits } from './styles';
+import { Container, Title, Price, InitialPrice, Benefits, ItemBenefits } from './styles';
 import { navigate, Routes } from 'src/routes';
 
 interface ComponentsProps {

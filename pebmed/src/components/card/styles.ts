@@ -45,11 +45,7 @@ export const InitialPrice = styled.span`
 	font-size: 1rem;
 	font-weight: 500;
 `;
-export const PriceAnnually = styled.p`
-	margin: 0;
-	font-size: 0.85rem;
-	font-weight: 400;
-`;
+
 export const Benefits = styled.ul`
 	padding-left: 16px;
 	margin-bottom: 24px;

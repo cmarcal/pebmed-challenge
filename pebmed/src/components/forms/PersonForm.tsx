@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Form } from './styles';
 import { InputField } from 'src/components/input';
 import { Person } from './interface';
