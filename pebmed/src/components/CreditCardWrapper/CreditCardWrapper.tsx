@@ -6,10 +6,11 @@ import { CreditCard } from './types';
 interface ComponentsProps {
 	infoCard: CreditCard;
 	focused: string;
+	handleValidCard({ issuer: string, maxLength: number }): void;
 }
 
 export function CreditCardWrapper(props: ComponentsProps) {
-	const { infoCard, focused } = props;
+	const { infoCard, focused, handleValidCard } = props;
 	return (
 		<div id='PaymentForm'>
 			<Cards
@@ -20,6 +21,7 @@ export function CreditCardWrapper(props: ComponentsProps) {
 				number={infoCard?.number || ''}
 				placeholders={{ name: 'NOME NO CARTÃO' }}
 				acceptedCards={['mastercard', 'visa', 'dinersclub', 'elo', 'amex']}
+				callback={(card) => handleValidCard({ issuer: card.issuer, maxLength: card.maxLength })}
 			/>
 		</div>
 	);
