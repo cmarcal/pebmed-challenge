@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Input, Label } from './styles';
+import { Label } from 'src/components/label';
+import { Container, Input } from './styles';
 interface ComponentProps {
 	nameInput: string;
 	value: string;
@@ -12,7 +13,7 @@ export function InputField(props: ComponentProps) {
 	const { label, nameInput, value, placeholder, handleChange, handleFocus } = props;
 	return (
 		<Container>
-			<Label>{label}</Label>
+			<Label text={label} />
 			<Input
 				name={nameInput}
 				value={value || ''}

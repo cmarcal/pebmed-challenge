@@ -8,10 +8,6 @@ export const Container = styled.div`
 	flex: 1;
 `;
 
-export const Label = styled.label`
-	font-size: 0.9rem;
-`;
-
 export const Input = styled.input`
 	border: 1px solid ${Color.dark};
 	border-radius: 5px;
