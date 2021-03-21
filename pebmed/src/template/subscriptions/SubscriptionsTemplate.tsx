@@ -23,11 +23,7 @@ export function SubscriptionsTemplate() {
 							isAnnually={plan.period === 'annually' || false}
 							title={plan.title}
 							fullPrice={plan.fullPrice}
-							installments={plan.installments}
-							periodLabel={plan.periodLabel}
 							caption={plan.caption}
-							description={plan.description}
-							splittable={plan.splittable}
 							gateway={plan.gateway}
 							discountPercentage={plan.discountPercentage}
 						/>

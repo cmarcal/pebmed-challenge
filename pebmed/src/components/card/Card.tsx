@@ -6,34 +6,16 @@ import { navigate, Routes } from 'src/routes';
 
 interface ComponentsProps {
 	caption: string;
-	description: string;
-	discountAmmount?: number;
 	discountPercentage: number;
 	fullPrice: number;
 	id: number;
-	installments: number;
-	periodLabel: string;
 	title: string;
 	isAnnually: boolean;
-	splittable: boolean;
 	gateway: string;
 }
 export function Card(props: ComponentsProps): ReactElement {
-	const {
-		title,
-		id,
-		isAnnually,
-		discountPercentage,
-		fullPrice,
-		installments,
-		periodLabel,
-		caption,
-		description,
-		splittable,
-		gateway
-	} = props;
+	const { title, id, isAnnually, discountPercentage, fullPrice, caption, gateway } = props;
 	const { handleSubscription } = useContext(SubscriptionContext);
-	const parcelValue = fullPrice / installments;
 	const discount = isAnnually ? discountPercentage * 100 : (discountPercentage / 100) * 100;
 	const valueWithDiscount = fullPrice - fullPrice * (discount / 100);
 	const choosePlan = () => {
@@ -54,7 +36,6 @@ export function Card(props: ComponentsProps): ReactElement {
 			<Benefits>
 				<ItemBenefits highlight>{discount}% de desconto</ItemBenefits>
 				<ItemBenefits>{caption}</ItemBenefits>
-				{/* <ItemBenefits>{description}</ItemBenefits> */}
 				<ItemBenefits>Acesso ilimitado</ItemBenefits>
 			</Benefits>
 			<Button text='Eu quero esse' onClick={choosePlan} highlight={isAnnually} />
