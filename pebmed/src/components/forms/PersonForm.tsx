@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
 import { Form } from './styles';
 import { InputField } from 'src/components/input';
+import { Person } from './interface';
+import { cpfMaskInput } from 'src/helper';
 
-interface Person {
-	fullName: string;
-	email: string;
-	cpf: string;
+interface ComponentProps {
+	handleChangePerson(name, value): void;
+	person: Person;
 }
 
-export function PersonForm() {
-	const [person, setPerson] = useState<Person>(null);
-
-	const handleChange = (event) => {
-		const { name, value } = event.target;
-		setPerson({ ...person, [name]: value });
-	};
+export function PersonForm(props: ComponentProps) {
+	const { person, handleChangePerson } = props;
 
 	return (
 		<Form>
@@ -23,21 +19,23 @@ export function PersonForm() {
 				nameInput='fullName'
 				value={person?.fullName || ''}
 				placeholder='Seu nome completo'
-				handleChange={handleChange}
+				handleChange={({ target }) => handleChangePerson(target.name, target.value)}
 			/>
 			<InputField
 				label='E-mail'
 				nameInput='email'
 				value={person?.email || ''}
 				placeholder='seuemail@email.com'
-				handleChange={handleChange}
+				handleChange={({ target }) => handleChangePerson(target.name, target.value)}
 			/>
 			<InputField
 				label='CPF'
 				nameInput='cpf'
-				value={person?.cpf || ''}
-				placeholder='000 000 000 00'
-				handleChange={handleChange}
+				value={person?.cpf ? cpfMaskInput(person?.cpf) : ''}
+				placeholder='000.000.000-00'
+				handleChange={({ target }) =>
+					target.value.length <= 14 && handleChangePerson(target.name, target.value.replace(/\D/g, ''))
+				}
 			/>
 		</Form>
 	);
