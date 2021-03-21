@@ -1,23 +1,43 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/router';
-import { Container, ProductDetail, InfoPayment, TitlePage, TitleCard, BoxPrice, PriceTitle, Price } from './styles';
+import React, { useContext } from 'react';
+import {
+	Container,
+	ProductDetail,
+	ProductBox,
+	InfoPayment,
+	ProductName,
+	ProductPrice,
+	PersonBox,
+	TitlePage,
+	TitleCard,
+	BoxPrice,
+	PriceTitle,
+	Price
+} from './styles';
 import { CreditCardForms, PersonForm } from 'src/components/forms';
+import { AcceptCards } from 'src/components/acceptcards';
+import { SubscriptionContext } from 'src/store/subscription';
 
 export function PaymentTemplate() {
-	const router = useRouter();
-	const { pid: planId } = router.query;
+	const { subscription } = useContext(SubscriptionContext);
 	return (
 		<Container>
 			<ProductDetail>
 				<TitlePage>Carrinho de compra</TitlePage>
+				<ProductBox>
+					<ProductName>{subscription.name}</ProductName>
+					<ProductPrice>R$ {subscription.fullPrice},00</ProductPrice>
+				</ProductBox>
 				<BoxPrice>
 					<PriceTitle>Total</PriceTitle>
-					<Price>R$ 600,00</Price>
+					<Price>R$ {subscription.fullPrice},00</Price>
 				</BoxPrice>
 			</ProductDetail>
 			<InfoPayment>
 				<TitleCard>Informações pessoais</TitleCard>
-				<PersonForm />
+				<PersonBox>
+					<PersonForm />
+					<AcceptCards />
+				</PersonBox>
 			</InfoPayment>
 			<InfoPayment>
 				<TitleCard>Descrição do cartão</TitleCard>

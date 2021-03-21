@@ -8,12 +8,30 @@ export const Container = styled.div`
 	height: 100vh;
 	padding: 40px;
 	gap: 32px;
+	@media (max-width: 1024px) {
+		flex-direction: column;
+		padding: 16px;
+	}
 `;
 
 export const ProductDetail = styled.div`
 	flex: 1.5;
 	padding: 40px;
 	position: relative;
+`;
+export const ProductBox = styled.div`
+	border-bottom: 1px solid ${Color.greyDarkest};
+	padding: 16px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+`;
+export const ProductName = styled.h2`
+	font-weight: 500;
+	font-size: 1.4rem;
+`;
+export const ProductPrice = styled.span`
+	font-weight: 500;
 `;
 export const InfoPayment = styled.div`
 	flex: 1;
@@ -23,7 +41,22 @@ export const InfoPayment = styled.div`
 	color: ${Color.light};
 	padding: 40px;
 	position: relative;
+	@media (max-width: 1024px) {
+		padding: 16px;
+	}
 `;
+export const PersonBox = styled.div`
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	height: 100%;
+	margin-top: -48px;
+	@media (max-width: 1024px) {
+		margin-top: 0;
+		height: 93%;
+	}
+`;
+
 export const TitlePage = styled.h1`
 	margin: 0;
 	font-size: 1.7rem;
@@ -34,6 +67,23 @@ export const TitleCard = styled.h2`
 	font-size: 1.2rem;
 	margin-bottom: 48px;
 	letter-spacing: 1px;
+	&:after {
+		content: '';
+		border-bottom: 2px solid ${Color.light};
+		width: 25%;
+		position: absolute;
+		top: 66px;
+		left: 40px;
+		height: 3px;
+	}
+
+	@media (max-width: 1024px) {
+		margin-bottom: 24px;
+		&:after {
+			top: 40px;
+			left: 16px;
+		}
+	}
 `;
 export const BoxPrice = styled.div`
 	border: 1px solid ${Color.greyLight};
@@ -43,6 +93,12 @@ export const BoxPrice = styled.div`
 	bottom: 0;
 	right: 0;
 	text-align: right;
+	@media (max-width: 1024px) {
+		position: relative;
+		width: fit-content;
+		float: right;
+		top: 15px;
+	}
 `;
 export const PriceTitle = styled.h4`
 	margin: 0;
