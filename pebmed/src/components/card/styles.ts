@@ -38,6 +38,13 @@ export const Price = styled.div`
 	font-size: 1.2rem;
 	color: ${Color.dark};
 `;
+export const InitialPrice = styled.span`
+	text-decoration-line: line-through;
+	text-decoration-color: ${Color.errorDarken};
+	text-decoration-thickness: from-font;
+	font-size: 1rem;
+	font-weight: 500;
+`;
 export const PriceAnnually = styled.p`
 	margin: 0;
 	font-size: 0.85rem;
@@ -47,8 +54,9 @@ export const Benefits = styled.ul`
 	padding-left: 16px;
 	margin-bottom: 24px;
 `;
-export const ItemBenefits = styled.li`
-	color: ${Color.greyDarken};
+export const ItemBenefits = styled.li<{ highlight?: boolean }>`
+	color: ${({ highlight }) => (highlight ? Color.appLight : Color.greyDarken)};
+	font-weight: ${({ highlight }) => (highlight ? 600 : 500)};
 	margin-bottom: 6px;
 `;
 

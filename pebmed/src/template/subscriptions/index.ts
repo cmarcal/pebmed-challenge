@@ -1,0 +1,1 @@
+export { SubscriptionsTemplate } from './SubscriptionsTemplate';

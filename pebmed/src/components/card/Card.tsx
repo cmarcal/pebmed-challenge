@@ -1,37 +1,45 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useContext } from 'react';
+import { SubscriptionContext } from 'src/store/subscription';
 import { Button } from 'src/components/button';
-import { Container, Title, Price, PriceAnnually, Benefits, ItemBenefits } from './styles';
+import { Container, Title, Price, PriceAnnually, InitialPrice, Benefits, ItemBenefits } from './styles';
 import { navigate, Routes } from 'src/routes';
 
 interface ComponentsProps {
 	caption: string;
-	description: string;
-	discountAmmount?: number;
-	discountPercentage?: number;
+	discountPercentage: number;
 	fullPrice: number;
 	id: number;
-	installments: number;
-	periodLabel: string;
 	title: string;
-	highligth: boolean;
-	splittable: boolean;
+	isAnnually: boolean;
+	gateway: string;
+	installmentsLimit: number;
 }
 export function Card(props: ComponentsProps): ReactElement {
-	const { title, id, highligth, fullPrice, installments, periodLabel, caption, description, splittable } = props;
-	const parcelValue = fullPrice / installments;
+	const { title, id, isAnnually, discountPercentage, fullPrice, caption, gateway, installmentsLimit } = props;
+	const { handleSubscription } = useContext(SubscriptionContext);
+	const discount = isAnnually ? discountPercentage * 100 : (discountPercentage / 100) * 100;
+	const valueWithDiscount = fullPrice - fullPrice * (discount / 100);
+	const choosePlan = () => {
+		handleSubscription({ id, name: title, price: valueWithDiscount, gateway, installmentsLimit });
+		navigate(Routes.payment());
+	};
 	return (
 		<Container>
 			<Title>{title}</Title>
 			<Price>
-				R$ {parcelValue} / por {periodLabel}
-				{splittable && <PriceAnnually>R$ {fullPrice} / por ano</PriceAnnually>}
+				<InitialPrice>De: R$ {fullPrice},00</InitialPrice>
+
+				<span>
+					Por: {!isAnnually && '12x de'} R$
+					{valueWithDiscount},00
+				</span>
 			</Price>
 			<Benefits>
+				<ItemBenefits highlight>{discount}% de desconto</ItemBenefits>
 				<ItemBenefits>{caption}</ItemBenefits>
-				<ItemBenefits>{description}</ItemBenefits>
 				<ItemBenefits>Acesso ilimitado</ItemBenefits>
 			</Benefits>
-			<Button text='Eu quero esse' onClick={() => navigate(Routes.payment(id))} highlight={highligth} />
+			<Button text='Eu quero esse' onClick={choosePlan} highlight={isAnnually} />
 		</Container>
 	);
 }

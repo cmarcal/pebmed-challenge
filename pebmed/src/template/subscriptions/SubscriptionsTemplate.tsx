@@ -3,7 +3,7 @@ import { useGetPlans } from 'src/hooks/plans';
 import { Card } from 'src/components/card';
 import { Loading } from 'src/components/loading';
 import { Container, Title, Header, Body } from './styles';
-export function ListTemplate() {
+export function SubscriptionsTemplate() {
 	const { plans, isLoading, error, fetchPlans } = useGetPlans();
 	useEffect(() => {
 		fetchPlans();
@@ -20,14 +20,13 @@ export function ListTemplate() {
 						<Card
 							key={plan.id}
 							id={plan.id}
-							highligth={plan.period === 'annually' || false}
+							isAnnually={plan.period === 'annually' || false}
 							title={plan.title}
 							fullPrice={plan.fullPrice}
-							installments={plan.installments}
-							periodLabel={plan.periodLabel}
 							caption={plan.caption}
-							description={plan.description}
-							splittable={plan.splittable}
+							gateway={plan.gateway}
+							discountPercentage={plan.discountPercentage}
+							installmentsLimit={plan.installments}
 						/>
 					))
 				) : (

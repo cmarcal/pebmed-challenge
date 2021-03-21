@@ -9,7 +9,7 @@ export const Container = styled.button<{ highlight?: boolean }>`
 	padding: 8px 16px;
 	font-size: 0.85rem;
 	cursor: pointer;
-	& :focus {
+	&:focus {
 		outline: none;
 	}
 `;
