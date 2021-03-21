@@ -35,7 +35,7 @@ export function Card(props: ComponentsProps): ReactElement {
 	const parcelValue = fullPrice / installments;
 	const choosePlan = () => {
 		handleSubscription({ id, name: title, fullPrice, gateway });
-		navigate(Routes.payment(id));
+		navigate(Routes.payment());
 	};
 	return (
 		<Container>

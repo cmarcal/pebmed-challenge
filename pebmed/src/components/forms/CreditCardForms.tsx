@@ -71,7 +71,7 @@ export function CreditCardForms(props: ComponentsProps) {
 				/>
 			</Form>
 			<ButtonWrapper>
-				<PaymentButton disabled={disabledPayment} text='Finalizar compra' onClick={() => console.log('teste')} />
+				<PaymentButton disabled={disabledPayment} onClick={() => console.log('teste')} />
 			</ButtonWrapper>
 		</>
 	);
