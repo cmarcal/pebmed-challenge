@@ -28,6 +28,7 @@ export function ListTemplate() {
 							caption={plan.caption}
 							description={plan.description}
 							splittable={plan.splittable}
+							gateway={plan.gateway}
 						/>
 					))
 				) : (
