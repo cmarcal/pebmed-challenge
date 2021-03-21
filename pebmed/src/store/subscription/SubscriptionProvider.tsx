@@ -1,11 +1,11 @@
-import { ReactElement, useState } from 'react';
+import React, { ReactElement, useState, ReactNode } from 'react';
 import { SubscriptionContext } from './SubscriptionContext';
-import { subscription } from './interface.d';
+import { subscription as ISubscription } from './interface';
 
-export function SubscriptionProvider({ children }): ReactElement {
-	const [subscription, seuSubscription] = useState<subscription>();
+export function SubscriptionProvider({ children }: { children: ReactNode }): ReactElement {
+	const [subscription, seuSubscription] = useState<ISubscription>();
 
-	const handleSubscription = (subscription) => seuSubscription(subscription);
+	const handleSubscription = (subscription: ISubscription) => seuSubscription(subscription);
 	const contextProps = {
 		subscription,
 		handleSubscription

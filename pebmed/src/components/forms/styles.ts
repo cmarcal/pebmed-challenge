@@ -1,4 +1,3 @@
-import { Color } from 'src/assets/designerToken/_colorsStyled';
 import styled from 'styled-components';
 
 export const Form = styled.div`

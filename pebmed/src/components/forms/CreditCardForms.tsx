@@ -99,7 +99,7 @@ export function CreditCardForms(props: ComponentsProps) {
 					placeholder='Insira aqui'
 					handleChange={({ target }) => setCupom(target.value)}
 				/>
-				{installmentsLimit < 1 && (
+				{installmentsLimit > 1 && (
 					<SelectField
 						label='Número de parcelas'
 						name='installments'

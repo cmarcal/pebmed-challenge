@@ -4,7 +4,7 @@ import { Card } from 'src/components/card';
 import { Loading } from 'src/components/loading';
 import { Container, Title, Header, Body } from './styles';
 export function SubscriptionsTemplate() {
-	const { plans, isLoading, error, fetchPlans } = useGetPlans();
+	const { plans, isLoading, fetchPlans } = useGetPlans();
 	useEffect(() => {
 		fetchPlans();
 	}, []);
