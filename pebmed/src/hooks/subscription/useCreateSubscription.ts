@@ -3,14 +3,14 @@ import { createSubscribe as createSubscribeAPI } from 'src/service/post/subscrip
 import { SubscribeDTO, Subscribe } from 'src/service/post/types';
 
 interface ReturnHooks {
-	subscription: SubscribeDTO;
+	createdSubscription: SubscribeDTO;
 	isLoading: boolean;
 	error: string;
 	createSubscribe: (subscribe: Subscribe) => void;
 }
 
 export function useCreateSubscription(): ReturnHooks {
-	const [subscription, setSubscription] = useState<SubscribeDTO>();
+	const [createdSubscription, setCreatedSubscription] = useState<SubscribeDTO>();
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [error, setError] = useState<string>(null);
 
@@ -19,10 +19,10 @@ export function useCreateSubscription(): ReturnHooks {
 		setError(null);
 
 		createSubscribeAPI(subscribe)
-			.then(({ data }) => setSubscription(data))
+			.then(({ data }) => setCreatedSubscription(data))
 			.catch((err) => setError(err))
 			.finally(() => setIsLoading(false));
 	};
 
-	return { subscription, isLoading, error, createSubscribe };
+	return { createdSubscription, isLoading, error, createSubscribe };
 }

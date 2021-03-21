@@ -12,14 +12,15 @@ interface ComponentsProps {
 	title: string;
 	isAnnually: boolean;
 	gateway: string;
+	installmentsLimit: number;
 }
 export function Card(props: ComponentsProps): ReactElement {
-	const { title, id, isAnnually, discountPercentage, fullPrice, caption, gateway } = props;
+	const { title, id, isAnnually, discountPercentage, fullPrice, caption, gateway, installmentsLimit } = props;
 	const { handleSubscription } = useContext(SubscriptionContext);
 	const discount = isAnnually ? discountPercentage * 100 : (discountPercentage / 100) * 100;
 	const valueWithDiscount = fullPrice - fullPrice * (discount / 100);
 	const choosePlan = () => {
-		handleSubscription({ id, name: title, fullPrice, gateway });
+		handleSubscription({ id, name: title, price: valueWithDiscount, gateway, installmentsLimit });
 		navigate(Routes.payment());
 	};
 	return (

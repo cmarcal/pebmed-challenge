@@ -1,6 +1,7 @@
 export type subscription = {
 	id: number;
 	name: string;
-	fullPrice: number;
+	price: number;
 	gateway: string;
+	installmentsLimit: number;
 };

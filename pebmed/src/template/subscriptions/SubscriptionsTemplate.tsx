@@ -26,6 +26,7 @@ export function SubscriptionsTemplate() {
 							caption={plan.caption}
 							gateway={plan.gateway}
 							discountPercentage={plan.discountPercentage}
+							installmentsLimit={plan.installments}
 						/>
 					))
 				) : (
