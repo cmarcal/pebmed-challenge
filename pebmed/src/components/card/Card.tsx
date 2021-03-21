@@ -1,4 +1,5 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useContext } from 'react';
+import { SubscriptionContext } from 'src/store/subscription';
 import { Button } from 'src/components/button';
 import { Container, Title, Price, PriceAnnually, Benefits, ItemBenefits } from './styles';
 import { navigate, Routes } from 'src/routes';
@@ -15,10 +16,27 @@ interface ComponentsProps {
 	title: string;
 	highligth: boolean;
 	splittable: boolean;
+	gateway: string;
 }
 export function Card(props: ComponentsProps): ReactElement {
-	const { title, id, highligth, fullPrice, installments, periodLabel, caption, description, splittable } = props;
+	const {
+		title,
+		id,
+		highligth,
+		fullPrice,
+		installments,
+		periodLabel,
+		caption,
+		description,
+		splittable,
+		gateway
+	} = props;
+	const { handleSubscription } = useContext(SubscriptionContext);
 	const parcelValue = fullPrice / installments;
+	const choosePlan = () => {
+		handleSubscription({ id, name: title, fullPrice, gateway });
+		navigate(Routes.payment(id));
+	};
 	return (
 		<Container>
 			<Title>{title}</Title>
@@ -31,7 +49,7 @@ export function Card(props: ComponentsProps): ReactElement {
 				<ItemBenefits>{description}</ItemBenefits>
 				<ItemBenefits>Acesso ilimitado</ItemBenefits>
 			</Benefits>
-			<Button text='Eu quero esse' onClick={() => navigate(Routes.payment(id))} highlight={highligth} />
+			<Button text='Eu quero esse' onClick={choosePlan} highlight={highligth} />
 		</Container>
 	);
 }
