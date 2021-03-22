@@ -12,7 +12,7 @@ interface ComponentsProps {
 export function CreditCardWrapper(props: ComponentsProps) {
 	const { infoCard, focused, handleValidCard } = props;
 	return (
-		<div id='PaymentForm'>
+		<div id='PaymentForm' data-testid='CreditCardComponent'>
 			<Cards
 				focused={focused}
 				cvc={infoCard?.cvv || ''}
