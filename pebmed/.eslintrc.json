@@ -31,6 +31,14 @@
 		"@typescript-eslint/no-empty-interface": "off",
 		"@typescript-eslint/explicit-function-return-type": "off"
 	},
+	"overrides": [
+		{
+			"files": ["*.js", "*.jsx"],
+			"rules": {
+				"@typescript-eslint/explicit-function-return-type": "off"
+			}
+		}
+	],
 	"settings": {
 		"react": {
 			"version": "detect" 
