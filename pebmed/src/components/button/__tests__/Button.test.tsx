@@ -17,7 +17,11 @@ describe('Button component', () => {
 		};
 	});
 
-	it('should render Button', async () => {
+	afterEach(() => {
+		props = null;
+	});
+
+	it('should render Button', () => {
 		renderComponent();
 		expect(screen.getByTestId('ButtonComponent')).toBeInTheDocument();
 	});
@@ -44,6 +48,10 @@ describe('Payment Button ', () => {
 			disabled: false,
 			onClick: null
 		};
+	});
+
+	afterEach(() => {
+		props = null;
 	});
 
 	it('should render disabled button', async () => {

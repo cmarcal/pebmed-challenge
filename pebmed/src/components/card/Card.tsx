@@ -24,12 +24,12 @@ export function Card(props: ComponentsProps): ReactElement {
 		navigate(Routes.payment());
 	};
 	return (
-		<Container>
+		<Container data-testid='CardComponent'>
 			<Title>{title}</Title>
 			<Price>
-				<InitialPrice>De: R$ {fullPrice},00</InitialPrice>
+				<InitialPrice data-testid='InitialPrice'>De: R$ {fullPrice},00</InitialPrice>
 
-				<span>
+				<span data-testid='DiscountPrice'>
 					Por: {!isAnnually && '12x de'} R$
 					{valueWithDiscount},00
 				</span>
