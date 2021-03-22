@@ -51,8 +51,9 @@ export function CreditCardForms(props: ComponentsProps) {
 	return (
 		<>
 			<CreditCardWrapper infoCard={cardValues} focused={focus} handleValidCard={setValidationCard} />
-			<Form>
+			<Form data-testid='CreditCardFormComponent'>
 				<InputField
+					testId='NumberCard'
 					label='Número do seu cartão'
 					nameInput='number'
 					value={cardValues?.number || ''}
@@ -65,6 +66,7 @@ export function CreditCardForms(props: ComponentsProps) {
 				/>
 				<Row>
 					<InputField
+						testId='ValidadeCard'
 						label='Validade'
 						nameInput='expiry'
 						value={cardValues?.expiry ? validityCreditCardMask(cardValues?.expiry) : ''}
@@ -75,6 +77,7 @@ export function CreditCardForms(props: ComponentsProps) {
 						handleFocus={handleFocus}
 					/>
 					<InputField
+						testId='CVVCard'
 						label='CVV'
 						nameInput='cvv'
 						value={cardValues?.cvv || ''}
@@ -84,6 +87,7 @@ export function CreditCardForms(props: ComponentsProps) {
 					/>
 				</Row>
 				<InputField
+					testId='nameCard'
 					label='Nome impresso no cartão'
 					nameInput='name'
 					value={cardValues?.name?.toUpperCase() || ''}
@@ -93,6 +97,7 @@ export function CreditCardForms(props: ComponentsProps) {
 				/>
 
 				<InputField
+					testId='Cupom'
 					label='Cupom'
 					nameInput='cupom'
 					value={cupom}
@@ -101,6 +106,7 @@ export function CreditCardForms(props: ComponentsProps) {
 				/>
 				{installmentsLimit > 1 && (
 					<SelectField
+						testId='InstallmentLimitPayment'
 						label='Número de parcelas'
 						name='installments'
 						options={optionsInstallment()}

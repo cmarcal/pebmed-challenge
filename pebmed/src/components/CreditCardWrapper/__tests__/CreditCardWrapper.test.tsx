@@ -2,7 +2,6 @@ import React from 'react';
 
 import { screen, render } from '@testing-library/react';
 import { CreditCardWrapper } from '../CreditCardWrapper';
-import userEvent from '@testing-library/user-event';
 
 let props;
 

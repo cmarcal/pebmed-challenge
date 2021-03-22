@@ -6,15 +6,17 @@ interface ComponentProps {
 	value: string;
 	label: string;
 	placeholder?: string;
+	testId?: string;
 	handleChange(event): void;
 	handleFocus?(event): void;
 }
 export function InputField(props: ComponentProps) {
-	const { label, nameInput, value, placeholder, handleChange, handleFocus } = props;
+	const { label, nameInput, value, placeholder, testId, handleChange, handleFocus } = props;
 	return (
 		<Container>
 			<Label text={label} />
 			<Input
+				data-testid={testId}
 				name={nameInput}
 				value={value || ''}
 				onFocus={handleFocus}

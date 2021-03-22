@@ -10,16 +10,17 @@ interface ComponentsProps {
 	name: string;
 	label: string;
 	value: number;
+	testId?: string;
 	handleChange(event): void;
 }
 export function SelectField(props: ComponentsProps) {
-	const { options, name, label, value, handleChange } = props;
+	const { options, name, label, value, testId, handleChange } = props;
 	return (
 		<Container>
 			<Label text={label} />
-			<SelectedField name={name} value={value} onChange={handleChange}>
+			<SelectedField data-testId={testId} name={name} value={value} onChange={handleChange}>
 				{options.map((item, i) => (
-					<option key={i} value={item.value}>
+					<option data-testid='select-option' key={i} value={item.value}>
 						{item.label}
 					</option>
 				))}
