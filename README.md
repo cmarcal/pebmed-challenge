@@ -8,7 +8,7 @@ To access the application in a productive environment, simply click on the URL:
 
 To download the repository and inspect the application structure
 
-> repository: https://github.com/cmarcal/pebmed-challenge/tree/develop/pebmed
+> repository: https://github.com/cmarcal/pebmed-challenge
 
 For more information on how to run project locally, check [ReadMe](./pebmed/README.md)
 
