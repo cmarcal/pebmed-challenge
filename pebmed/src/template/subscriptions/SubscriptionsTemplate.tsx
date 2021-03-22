@@ -10,7 +10,7 @@ export function SubscriptionsTemplate() {
 	}, []);
 
 	return (
-		<Container>
+		<Container data-testid='SubscriptionContainer'>
 			<Header>
 				<Title>Plano de Assinatura</Title>
 			</Header>
