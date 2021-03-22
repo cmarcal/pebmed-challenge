@@ -13,7 +13,7 @@ export function PersonForm(props: ComponentProps) {
 	const { person, handleChangePerson } = props;
 
 	return (
-		<Form>
+		<Form data-testid='PersonFormComponent'>
 			<InputField
 				label='Nome completo'
 				nameInput='fullName'
