@@ -10,8 +10,8 @@ export function PaymentButton(props: ComponentsProps) {
 	const { disabled, onClick } = props;
 
 	return (
-		<ButtonWrapper disabled={disabled}>
-			<Button text='Ativar assinatura' onClick={onClick} />
+		<ButtonWrapper disabled={disabled} data-testid='PaymentButton'>
+			<Button disabled={disabled} text='Ativar assinatura' onClick={onClick} />
 		</ButtonWrapper>
 	);
 }

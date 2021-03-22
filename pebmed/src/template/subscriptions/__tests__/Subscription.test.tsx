@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { screen, act, render } from '@testing-library/react';
+import { screen, act } from '@testing-library/react';
 import { WrapperWithIsPreviewContext } from 'src/util/tests/RenderWithContext';
 import { SubscriptionsTemplate } from '../SubscriptionsTemplate';
 import * as getPlans from 'src/service/get/plans';

@@ -8,7 +8,7 @@ export const Container = styled.button<{ highlight?: boolean }>`
 	border-radius: 8px;
 	padding: 8px 16px;
 	font-size: 0.85rem;
-	cursor: pointer;
+	cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 	&:focus {
 		outline: none;
 	}

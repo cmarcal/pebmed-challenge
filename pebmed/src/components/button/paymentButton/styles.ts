@@ -12,7 +12,7 @@ export const ButtonWrapper = styled.div<{ disabled: boolean }>`
 		text-transform: uppercase;
 		letter-spacing: 0.8px;
 		font-weight: 600;
-		cursor: ${({ disabled }) => disabled && 'not-allowed'};
+
 		${({ disabled }) =>
 			!disabled &&
 			`  &:hover {
