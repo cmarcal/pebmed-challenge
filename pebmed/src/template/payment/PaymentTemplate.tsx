@@ -31,6 +31,7 @@ export function PaymentTemplate() {
 	const handleChangePerson = (name, value) => {
 		setPerson({ ...person, [name]: value });
 	};
+
 	const submitSubscription = (paymentInfo: { cardValues: CreditCard; cupom: string; installments: number }) => {
 		const { cvv, expiry, name, number } = paymentInfo.cardValues;
 		const subscribe = {
@@ -59,7 +60,7 @@ export function PaymentTemplate() {
 					installment={createdSubscription?.installments}
 				/>
 			)}
-			<Container>
+			<Container data-testid='PaymentContainer'>
 				{subscription ? (
 					<>
 						<ProductDetail>

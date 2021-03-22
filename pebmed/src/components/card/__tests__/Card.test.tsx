@@ -4,9 +4,12 @@ import { screen } from '@testing-library/react';
 import { WrapperWithIsPreviewContext } from 'src/util/tests/RenderWithContext';
 
 import { Card } from '../Card';
-
+const providerProps = {
+	subscription: null,
+	handleSubscription: null
+};
 let props;
-const renderComponent = () => WrapperWithIsPreviewContext(<Card {...props} />);
+const renderComponent = () => WrapperWithIsPreviewContext(<Card {...props} />, { providerProps });
 
 describe('Card component', () => {
 	beforeEach(() => {
